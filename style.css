@@ -15,7 +15,7 @@
     --second-color:#e05404;
     --text-color:#060414;
     --container-color:#efe8e0;
-    --bg-color:#f7f7f7;
+    --bg-color:#e4cccc;
     --text-alter-color:#818181;
     --poppins-font:"poppins",sans-serif;
     --font-family-2:"squada One",sans-serif;
@@ -23,9 +23,16 @@
 
 body {
     color: var(--text-color);
-    background: var(--bg-color);
+    background: var(--bg-color);    
     
 }
+html::-webkit-scrollbar{
+    width: 0.5rem;
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+} 
 
 a {
     text-decoration: none;
@@ -40,7 +47,7 @@ section {
 }
 
 .container {
-    max-width: 1060px;
+    max-width: 1060px;   
     margin: auto;
     width: 100%;
 
@@ -108,7 +115,7 @@ header {
     transition: 0.3s ease;
 }
 .menu-icon {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 5px;
@@ -152,19 +159,20 @@ header {
 .home-img img {
     width: 100%;
 } 
-.home-img:before {
+.home-img::before {
     width: 100%;
-    content: 'Taycan';
-     font-size: 11rem;
-     font-weight: 500;
-     text-transform: uppercase;
-     letter-spacing: 2rem;   
-     position: absolute;
-     text-align: center;
-     top: -80px;
-     color: #ffb18d;
-     z-index: -1;
+   content: "Taycan"; 
+   font-size: 15rem;  
+   font-weight: 500;
+   text-transform: uppercase;
+   letter-spacing: 2rem;
+   position: absolute;
+   text-align: center;
+   top: -80px;
+   color: #ffb18d;
+   z-index: -1;
 }
+    
 .input-form {
     max-width: 550px;
     margin: 1rem auto;
@@ -461,3 +469,124 @@ header {
     text-align: center;
 
 }
+@media (max-width:1080px) {
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+}
+@media (max-width:970px) {
+    section {
+        padding: 2rem 0;
+    }
+    
+   .home-img::before {
+    font-size: 8rem;
+    top: -60px;
+}
+}
+@media (max-width:880px) {
+    .nav {
+        padding: 12px 20px;
+        border-radius: 0.6rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .home {
+        min-height: 500px;
+        padding-top: 9rem;
+
+    }
+    .home-img::before{
+        font-size: 6rem;
+        top: -38px;
+    }
+    .footer-content{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:620px) {
+    header {
+        top: 15px;
+    }
+    .nav-icons .bx{
+     font-size: 17px;   
+    }
+    .menu-icon{
+        display: flex;
+    }
+    .navbar{
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90vw;
+        background: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-radius: 1rem;
+        clip-path: polygon(0 0, 100% 0, 0 0);
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        
+       }
+       .open-menu {
+        clip-path: polygon(0 0, 100% 1%, 100% 100%, 0% 100%);
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+       }
+    .nav-link{
+        display: block;
+        margin: 1rem 0;
+    }
+    .home {
+        min-height: 440px;
+        padding-top: 8rem;
+    }
+    .home-img::before {
+        font-size: 5rem;
+        top: -34px;
+        letter-spacing: 1.2rem;
+    }
+    .newsletter h2 {
+        font-size: 2.1rem;
+    }
+    .newsletter p {
+        font-size: 0.94rem;
+    }
+}
+ @media (max-width:477px) {
+    .home-img{
+        width: 95%;
+        margin: auto;
+    }
+    .home-img::before{
+        font-size: 4rem;
+        top: -32px;
+        letter-spacing: 1rem;
+    }
+    .input-form {
+        flex-direction: column;
+        align-items: normal;
+    }
+    .input-box{
+        flex:none;
+    }
+    .input-border{
+        border-right: none;
+        padding: 0 0 10px;
+        border-bottom: 1px solid var(--text-alter-color);
+    }
+    .heading h2 {
+        font-size: 2rem;
+    }
+ }  
+@media (max-width:380px) {
+        .home-img::before{
+        font-size: 3.5rem;
+        top: -32px;
+        letter-spacing: 0.8rem;
+        }   
+} 
