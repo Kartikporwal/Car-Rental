@@ -320,7 +320,6 @@ header {
 }
 .rental-box img {
     margin: 1.8rem 0 1rem;
-    height: 74px;
     object-fit: contain;
     object-position: center;
 
